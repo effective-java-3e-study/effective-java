@@ -1,5 +1,8 @@
 9장 정리.
 
+블로그로 먼저 정리하고 -> md 파일로 옮기다보니 가독성이 블로그가 더 좋습니다.
+### 블로그 링크: https://mn040820.tistory.com/135
+
 InputStream, OutputStream, java.sql.Connection은 close()를 통해 직접 닫아줘야 한다.
 왜? 알다시피 java에는 gc가 존재한다. 힙영역에서 참조되지 않는 객체를 조사하고 제거하는 역할을 진행한다.
 그래서 따로 메모리 해제를 하지 않고 java를 사용해왔다.
