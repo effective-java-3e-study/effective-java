@@ -216,6 +216,43 @@ public class ForwardingSet<E> implements Set<E> {
         s.clear();
     }
 }
+
+
+-------------------------
+커스텀 예제
+public class MySet<E> {
+    private int addCount;
+    private final Set<E> set;
+
+    public MySet(Set<E> set) {
+        this.set = set;
+    }
+
+    public boolean add(E e) {
+        addCount++;
+        return set.add(e);
+    }
+
+    public boolean addAll(Collection<? extends E> c) {
+        addCount += c.size();
+        return set.addAll(c);
+    }
+
+    public int getAddCount() {
+        return addCount;
+    }
+}
+
+public class MySetMain {
+    public static void main(String[] args) {
+        MySet<String> mySet = new MySet<>(new HashSet<>());
+        mySet.addAll(List.of("a", "b", "c"));
+        mySet.add("A");
+        mySet.add("B");
+        mySet.add("C");
+        System.out.println(mySet.getAddCount()); -> 6
+    }
+}
 ```
 심지어 유연하다. 기존 코드는 HashSet을 상속했기에 HashSet의 기능만 사용 가능했지만, 이제 생성자에 넘겨주는 값에 따라 다양한 Set의 기능을 추가, 보완할 수 있다.
 
