@@ -9,7 +9,7 @@
 
 
 
-문제 1
+### 문제 1
 
 HashSet(구체 클래스)을 상속한 MyHashSet(구체 클래스)
 ```java
@@ -70,7 +70,7 @@ public boolean addAll(Collection<? extends E> c) {
 
 
 
-문제 2
+### 문제 2
 
 다음 릴리스에 새로운 메서드 추가
 
@@ -86,7 +86,8 @@ public boolean addAll(Collection<? extends E> c) {
 
 하위 클래스에 새로운 매서드를 추가해서 사용중이라 가정하자. 하지만 다음 릴리스에 하필 운 없게도 상위 클래스에 하위 클래스에 직접 추가한 새로운 메서드와 시그니처가 같고 반환타입이 다른 메서드가 추가된다면? 컴파일조차 되지 않는다. 자바 컴파일러는 하위 클래스이고, 시그니처가 같다면, 재정의를 하는 것이라 판단하기 때문이다.
 
-attempting to use incompatible return type
+> attempting to use incompatible return type
+
 만약 반환타입마저 같다면 그냥 메서드 재정의한 셈이다. 앞서 말한 똑같은 문제가 발생한다. 또한 하위 클래스를 작성할 때에는 상위 클래스 메서드는 존재하지도 않았으니 재정의가 되어버리면 상위 클래스가 요구하는 규약을 만족 못할 가능성이 매우 크다.
 
 
@@ -97,7 +98,7 @@ attempting to use incompatible return type
 
 기존 클래스를 확장하는 대신, 새로운 클래스를 만들고 private 필드로 기존 클래스의 인스턴스를 참조하게 하는 것이다.
 
-기존 클래스가 새로운 클래스의 구성요소로 쓰인다는 뜻에서 이러한 설계를 컴포지션(composition; 구성)이라고 한다.
+기존 클래스가 새로운 클래스의 구성요소로 쓰인다는 뜻에서 이러한 설계를 **컴포지션(composition; 구성)** 이라고 한다.
 
 
 
